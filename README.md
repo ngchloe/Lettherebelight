@@ -23,6 +23,11 @@ Thus, this document outlines my attempts at training my own Textual Inversion mo
 
 ControlNet is a means of controlling diffusion models by adding extra conditions. It allows for the copying of compositions from a reference image. For example:
 
+| Elevation View | Perspective View |
+| :----- | :------ |
+| <img src="https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg"  width ="720">| <img src="https://github.com/ngchloe/Lettherebelight/blob/main/images/sample.png" width ="720" >
+| Exported Sketchup view of model (own model) as the input image to SD 1.5 | SD 1.5 and ControlNet with a text prompt automatically renders the image, while still retaining the original composition and reference linework from the input image. |
+
 •	Textual Inversion (https://arxiv.org/abs/2208.01618)
 
 Textual Inversion is a way to build upon existing large models with a user-provided concept. With a few sample images of a user-provided concept, be it an object or style, this can be represented through new ‘words’ of an existing model. These ‘words’ can then be used to guide outputs in a more intuitive and personalised manner.
