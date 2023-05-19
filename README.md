@@ -5,7 +5,7 @@ Date: May 2023
 
 Disclaimer: I'm not trained in ML (word pun totally intended) so the following document is simply a layperson's understanding, and used as an avenue to share my findings.
 
-### Programs/tools concerned:
+## Programs/tools concerned:
 
 •	Stable Diffusion 1.5 – Automatic1111
 
@@ -17,7 +17,7 @@ Stable Diffusion and ControlNet are powerful tools with good potential to accele
 
 Thus, this document outlines my attempts at training my own Textual Inversion model in Stable Diffusion (SD) 1.5. 
 
-### A Brief Introduction
+## A Brief Introduction
 
 •	ControlNet (https://github.com/lllyasviel/ControlNet)
 
@@ -40,9 +40,11 @@ I made a quick villa in Sketchup and exported 2 black and white linework-only vi
 | :----- | :------ |
 | ![A720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/A720x512.jpg)| ![B720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg) |
 
-### Training of Textual Inversion (TI)
+## Training of Textual Inversion (TI)
 
-| Create embedding Settings | Configuration |
+### Create Embedding
+
+| Settings | Configuration |
 | :----- | :------ |
 | Stable Diffusion checkpoint  | v1-5-pruned-emaonly.ckpt |
 | Embedding name | lettherebelight |
