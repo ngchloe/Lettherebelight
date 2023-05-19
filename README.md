@@ -74,12 +74,19 @@ My prior studies have shown that the realisticVision2.0 checkpoint (https://civi
 | Height | 512px (to correspond to input image size) |
 
 
-| ControlNet Setting | Configuration |
+| ControlNet Settings | Configuration |
 | :----- | :------ |
 | Enable | Yes |
 | Preprocessor | Canny |
 | Model | Control_v11p_sd15_canny |
 
+| Script Settings | Configuration |
+| :----- | :------ |
+| Script | X/Y/Z plot |
+| X values | Lettherebelight, Lettherebelight-30, Lettherebelight-60, Lettherebelight-90, Lettherebelight-120, Lettherebelight-150, Lettherebelight-180, Lettherebelight-210, Lettherebelight-240, Lettherebelight-270, Lettherebelight-300 |
 
+The use of this script is to automate and swap out ‘Lettherebelight’ in the original prompt with the other TI checkpoints.
+
+The most suitable turned out to be Lettherebelight-150. That will be the checkpoint used. I saved the 9 rejected checkpoints in a separate folder, and renamed Lettherebelight-150 to Lettherebelight.
 
 
