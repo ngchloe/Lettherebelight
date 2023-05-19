@@ -94,7 +94,7 @@ My prior studies have shown that the realisticVision2.0 checkpoint (https://civi
 
 ### Script
 
-| Script Settings | Configuration |
+| Settings | Configuration |
 | :----- | :------ |
 | Script | X/Y/Z plot |
 | X values | Lettherebelight, Lettherebelight-30, Lettherebelight-60, Lettherebelight-90, Lettherebelight-120, Lettherebelight-150, Lettherebelight-180, Lettherebelight-210, Lettherebelight-240, Lettherebelight-270, Lettherebelight-300 |
@@ -109,7 +109,7 @@ With a checkpoint selected, it was now time to test it.
 
 ### txt2img
 
-| txt2img Settings | Configuration |
+| Settings | Configuration |
 | :----- | :------ |
 | Prompt  | Lettherebelight, (((architectural rendering)), (((dramatic lighting))), landscape photo of a modern villa surrounded by tropical trees, night, (((modern architecture villa))), modern, (((tropical trees))), (((lush vegetation))), (((villa on the beach))), white sandy beach, ((tropical)), (((realistic))), 85mm, f1.8, portrait, photo realistic, hyperrealistic, super detailed |
 | Negative Prompt | signature, soft, blurry, drawing, sketch, poor quality, ugly, text, type, word, logo, pixelated, low resolution, saturated, high contrast, oversharpened |
@@ -122,7 +122,7 @@ With a checkpoint selected, it was now time to test it.
 
 ### ControlNet
 
-| ControlNet Settings | Configuration |
+| Settings | Configuration |
 | :----- | :------ |
 | Enable | Yes |
 | Preprocessor | Canny |
