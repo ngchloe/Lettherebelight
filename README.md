@@ -73,12 +73,15 @@ My prior studies have shown that the realisticVision2.0 checkpoint (https://civi
 | Width | 720px (to correspond to input image size) |
 | Height | 512px (to correspond to input image size) |
 
+ControlNet
 
 | ControlNet Settings | Configuration |
 | :----- | :------ |
 | Enable | Yes |
 | Preprocessor | Canny |
 | Model | Control_v11p_sd15_canny |
+
+Script
 
 | Script Settings | Configuration |
 | :----- | :------ |
@@ -89,4 +92,15 @@ The use of this script is to automate and swap out ‘Lettherebelight’ in the 
 
 The most suitable turned out to be Lettherebelight-150. That will be the checkpoint used. I saved the 9 rejected checkpoints in a separate folder, and renamed Lettherebelight-150 to Lettherebelight.
 
+### Observations of selected Textual Inversion checkpoint
 
+With a checkpoint selected, it was now time to test it.
+
+| txt2img Settings | Configuration |
+| :----- | :------ |
+| Prompt  | Lettherebelight, (((architectural rendering)), (((dramatic lighting))), landscape photo of a modern villa surrounded by tropical trees, night, (((modern architecture villa))), modern, (((tropical trees))), (((lush vegetation))), (((villa on the beach))), white sandy beach, ((tropical)), (((realistic))), 85mm, f1.8, portrait, photo realistic, hyperrealistic, super detailed |
+| Negative Prompt | signature, soft, blurry, drawing, sketch, poor quality, ugly, text, type, word, logo, pixelated, low resolution, saturated, high contrast, oversharpened |
+| Sampling method  | Euler a  |
+| Sampling steps | 20 |
+| Width | 720px (to correspond to input image size) |
+| Height | 512px (to correspond to input image size) |
