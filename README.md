@@ -154,7 +154,7 @@ Daytime view (elevation)
 
 | realisticVision v2.0 (SD 1.5) | realisticVision v2.0 (SD 1.5) with ‘Let there be Light’ |
 | :----- | :------ |
-| ![no TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/daytime%20view%20-%20elevation.png) | ![with TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/daytime%20view%20-%20elevation%20-%20LTBL.png) |
+| ![no TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/daytime%20-%20elevation.png) | ![with TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/daytime%20-%20elevation%20-%20LTBL.png) |
 
 The use of Lettherebelight TI model provides dramatic and warm building lighting for sunset/night view and daytime views.
 
@@ -162,3 +162,16 @@ However, the daytime views are skewed towards dusk and hence this TI model may n
 
 ### Further testing
 
+To further test the usefulness of this TI model, I also wondered: could the same effect be achieved via text prompt without Lettherebelight? (i.e. is this TI model even necessary?)
+
+Sunset view (elevation)
+
+| realisticVision v2.0 (SD 1.5) | 
+| :----- | 
+| ![no TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/sunset%20-%20elevation%20-%20prompt.png) |
+
+The above collage of images uses the same text prompt, but with additional prompting to achieve a warm, orange-hued glow effect. The prompt has the unintentional effect of toning the building material to be more orange in colour and the images look more flat and less dramatic. Hence, text alone is insufficient in achieving the intended effect, Lettherebelight is a useful Textual Inversion model in further refining a given text prompt.
+
+## Conclusion
+
+### The ‘Lettherebelight’ Textual Inversion model is most suitable if you are aiming for a visual rendering that is: more dramatic, has a warmer hue (where the building appears to glow), and in the hours of sunset and night time. 
