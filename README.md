@@ -9,7 +9,7 @@ Date: May 2023
 
 *Disclaimer: I'm not trained in ML (word pun totally intended) so the following document is simply a layperson's understanding, and used as an avenue to share my findings.*
 
-## Programs/tools involved
+## 01. Programs/tools involved
 
 •	Stable Diffusion 1.5 – Automatic1111
 
@@ -21,7 +21,7 @@ Stable Diffusion and ControlNet are powerful tools with good potential to accele
 
 Thus, this document outlines my attempts at training my own Textual Inversion model in Stable Diffusion (SD) 1.5. I trained the Textual Inversion on my RTX3060 (Laptop GPU) with 6GB of VRAM.
 
-## A Brief Introduction
+## 02. A Brief Introduction
 
 •	ControlNet (https://github.com/lllyasviel/ControlNet)
 
@@ -36,7 +36,7 @@ ControlNet is a means of controlling diffusion models by adding extra conditions
 
 Textual Inversion is a way to build upon existing large models with a user-provided concept. With a few sample images of a user-provided concept, be it an object or style, this can be represented through new ‘words’ of an existing model. These ‘words’ can then be used to guide outputs in a more intuitive and personalised manner.
 
-## Pre-training Preparation
+## 03. Pre-training Preparation
 
 I made a quick villa in Sketchup and exported 2 black and white linework-only views at 720px by 512px each. Sample views as inputs to SD 1.5 and ControlNet:
 
@@ -44,7 +44,7 @@ I made a quick villa in Sketchup and exported 2 black and white linework-only vi
 | :-----: | :------: |
 | ![A720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/A720x512.jpg)| ![B720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg) |
 
-## Training of Textual Inversion (TI)
+## 04. Training of Textual Inversion (TI)
 
 ### Create Embedding
 
@@ -67,7 +67,7 @@ The (4) images were then pre-processed using BLIP for captions, and also cropped
 | Embedding saved after every N steps  | 30  |
 | Latent sampling method | Deterministic |
 
-## Finding the best Textual Inversion checkpoint
+## 05. Finding the best Textual Inversion checkpoint
 
 Once the training was completed, the next step was to determine which of the embedding checkpoints was the most appropriate. For max steps of 300 and with an embedding saved every 30 steps, that means that there are 10 TI checkpoints to choose from.
 
@@ -103,7 +103,7 @@ The use of this script is to automate and swap out ‘Lettherebelight’ in the 
 
 The most suitable turned out to be Lettherebelight-150. That will be the checkpoint used. I saved the 9 rejected checkpoints in a separate folder, and renamed Lettherebelight-150 to Lettherebelight.
 
-## Observations of selected Textual Inversion checkpoint
+## 06. Observations of selected Textual Inversion checkpoint
 
 With a checkpoint selected, it was now time to test it.
 
@@ -175,7 +175,7 @@ The use of Lettherebelight TI model provides dramatic and warm building lighting
 
 However, the daytime views are skewed towards dusk and hence this TI model may not be suitable for a bright noon time view.
 
-## Further testing
+## 07. Further testing
 
 To further test the usefulness of this TI model, I also wondered: could the same effect be achieved via text prompt without Lettherebelight? (i.e. is this TI model even necessary?)
 
@@ -189,6 +189,6 @@ The above collage of images uses the same text prompt, but with additional promp
 
 **Hence, since text alone is insufficient in achieving the intended effect, Lettherebelight is a useful Textual Inversion model in further refining a given text prompt.**
 
-## Conclusion
+## 08. Conclusion
 
 ### The ‘Lettherebelight’ Textual Inversion model is most suitable if you are aiming for a visual rendering that is: more dramatic, has a warmer hue (where the building appears to glow), and in the hours of sunset and night time. 
