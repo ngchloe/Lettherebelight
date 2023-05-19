@@ -54,20 +54,22 @@ I made a quick villa in Sketchup and exported 2 black and white linework-only vi
 
 The (4) images were then pre-processed using BLIP for captions, and also cropped to 512px by 512px.
 
-| Training Settings | Configuration |
+### Training Settings
+
+| Settings | Configuration |
 | :----- | :------ |
 | Embedding Learning rate  | 0.005 |
 | Max steps | 300 |
 | Embedding saved after every N steps  | 30  |
 | Latent sampling method | Deterministic |
 
-### Finding the best Textual Inversion checkpoint
+## Finding the best Textual Inversion checkpoint
 
 Once the training was completed, the next step was to determine which of the embedding checkpoints was the most appropriate. For max steps of 300 and with an embedding saved every 30 steps, that means that there are 10 TI checkpoints to choose from.
 
 My prior studies have shown that the realisticVision2.0 checkpoint (https://civitai.com/models/4201/realistic-vision-v20) was the most suitable for architectural visual renderings. The other checkpoints (the base SD checkpoint, deliberate_v2, dvArchMultiPrompt) did not feel as suitable. Hence, the next task was to test the 10 TI checkpoints against the realisticVision2.0 checkpoint to identify the most suitable. 
 
-txt2img
+### txt2img
 
 | txt2img Settings | Configuration |
 | :----- | :------ |
@@ -78,7 +80,7 @@ txt2img
 | Width | 720px (to correspond to input image size) |
 | Height | 512px (to correspond to input image size) |
 
-ControlNet
+### ControlNet
 
 | ControlNet Settings | Configuration |
 | :----- | :------ |
@@ -86,7 +88,7 @@ ControlNet
 | Preprocessor | Canny |
 | Model | Control_v11p_sd15_canny |
 
-Script
+### Script
 
 | Script Settings | Configuration |
 | :----- | :------ |
@@ -97,11 +99,11 @@ The use of this script is to automate and swap out ‘Lettherebelight’ in the 
 
 The most suitable turned out to be Lettherebelight-150. That will be the checkpoint used. I saved the 9 rejected checkpoints in a separate folder, and renamed Lettherebelight-150 to Lettherebelight.
 
-### Observations of selected Textual Inversion checkpoint
+## Observations of selected Textual Inversion checkpoint
 
 With a checkpoint selected, it was now time to test it.
 
-txt2img
+### txt2img
 
 | txt2img Settings | Configuration |
 | :----- | :------ |
@@ -114,7 +116,7 @@ txt2img
 | Batch count | 1 |
 | Batch size | 4 |
 
-ControlNet
+### ControlNet
 
 | ControlNet Settings | Configuration |
 | :----- | :------ |
@@ -124,13 +126,13 @@ ControlNet
 
 The following images are direct exports from SD 1.5 and have not been retouched in any way. 
 
-Sunset View (elevation)
+### Sunset View (elevation)
 
 | realisticVision v2.0 (SD 1.5) | realisticVision v2.0 (SD 1.5) with ‘Let there be Light’ |
 | :----- | :------ |
 | ![no TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/sunset%20view%20-%20elevation.png) | ![with TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/sunset%20view%20-%20elevation%20-%20LTBL.png) |
 
-Sunset View (perspective)
+### Sunset View (perspective)
 
 | realisticVision v2.0 (SD 1.5) | realisticVision v2.0 (SD 1.5) with ‘Let there be Light’ |
 | :----- | :------ |
@@ -138,7 +140,9 @@ Sunset View (perspective)
 
 I also tested a noon/daytime view with the following. Settings are the same with slight differences in the text prompt for time of day.
 
-| txt2img Settings | Configuration |
+### txt2img
+
+| Settings | Configuration |
 | :----- | :------ |
 | Prompt  | Lettherebelight, ((architectural rendering)), landscape photo of a modern villa surrounded by tropical trees, noon, day time, (((modern architecture villa))), modern, (((tropical trees))), (((lush vegetation))), (((villa on the beach))), white sandy beach, ((tropical)), (((realistic))), 85mm, f1.8, portrait, photo realistic, hyperrealistic, super detailed |
 | Negative Prompt | signature, soft, blurry, drawing, sketch, poor quality, ugly, text, type, word, logo, pixelated, low resolution, saturated, high contrast, oversharpened |
@@ -149,7 +153,7 @@ I also tested a noon/daytime view with the following. Settings are the same with
 | Batch count | 1 |
 | Batch size | 4 |
 
-ControlNet
+### ControlNet
 
 | ControlNet Settings | Configuration |
 | :----- | :------ |
@@ -157,7 +161,7 @@ ControlNet
 | Preprocessor | Canny |
 | Model | Control_v11p_sd15_canny |
 
-Daytime view (elevation)
+### Daytime view (elevation)
 
 | realisticVision v2.0 (SD 1.5) | realisticVision v2.0 (SD 1.5) with ‘Let there be Light’ |
 | :----- | :------ |
@@ -167,11 +171,11 @@ The use of Lettherebelight TI model provides dramatic and warm building lighting
 
 However, the daytime views are skewed towards dusk and hence this TI model may not be suitable for a bright noon time view.
 
-### Further testing
+## Further testing
 
 To further test the usefulness of this TI model, I also wondered: could the same effect be achieved via text prompt without Lettherebelight? (i.e. is this TI model even necessary?)
 
-Sunset view (elevation)
+### Sunset view (elevation)
 
 | realisticVision v2.0 (SD 1.5) | 
 | :----- | 
