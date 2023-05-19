@@ -1,6 +1,10 @@
 # Fine-tuning Stable Diffusion using Textual Inversion
 ## Training my own Textual Inversion model for Stable Diffusion and ControlNet for Architectural Renderings
 
+| ![B720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg)| ![](https://github.com/ngchloe/Lettherebelight/blob/main/images/sample%202.png)| ![sample](https://github.com/ngchloe/Lettherebelight/blob/main/images/sample%20-%20LTBL.png) | 
+| :------: | :------: | :------: |
+| Input (view from Sketchup) | SD (no Textual Inversion) | Refined with my Textual Inversion |
+
 Date: May 2023
 
 *Disclaimer: I'm not trained in ML (word pun totally intended) so the following document is simply a layperson's understanding, and used as an avenue to share my findings.*
@@ -25,7 +29,7 @@ ControlNet is a means of controlling diffusion models by adding extra conditions
 
 | Input image | Output using Stable Diffusion and ControlNet|
 | :------ | :------ |
-| <img src="https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg"  width ="720">| <img src="https://github.com/ngchloe/Lettherebelight/blob/main/images/sample.png" width ="720" >
+| ![B720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg)| ![sample](https://github.com/ngchloe/Lettherebelight/blob/main/images/sample.png) |
 | Exported Sketchup view of model (own model) as the input image to SD 1.5 | SD 1.5 and ControlNet with a text prompt automatically renders the image, while still retaining the original composition and reference linework from the input image. |
 
 •	Textual Inversion (https://arxiv.org/abs/2208.01618)
