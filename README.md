@@ -15,13 +15,13 @@ Date: May 2023
 
 •	ControlNet
 
-•	Textual Inversion (also called embedding)
+•	Textual Inversion (also known as embedding)
 
 Stable Diffusion and ControlNet are powerful tools with good potential to accelerate the workflow from a basic preliminary Sketchup model view to a visual rendering (albeit draft) of the model in the quickest time possible, with various iterations possible. While this already allows for visual renderings to be generated, the objective of this experiment is to further finetune and enhance the visual rendering through the training and use of a Textual Inversion model.
 
 Thus, this document outlines my attempts at training my own Textual Inversion model in Stable Diffusion (SD) 1.5. I trained the Textual Inversion on my RTX3060 (Laptop GPU) with 6GB of VRAM.
 
-## 02. A Brief Introduction
+## 02. A Brief Introduction: ControlNet and Textual Inversion
 
 •	ControlNet (https://github.com/lllyasviel/ControlNet)
 
@@ -54,7 +54,7 @@ I made a quick villa in Sketchup and exported 2 black and white linework-only vi
 | Embedding name | lettherebelight |
 | Number of vectors per token  | 10  |
 
-(4) images with the most common features were selected from an initial total of (30) images found online. It is important that the images share similar features in order for the Textual Inversion to be effective. If the images were totally disparate, the model may not train well because the images are too different. Also, the images had to be of high quality. As the saying goes, ‘garbage in, garbage out’.
+(4) images with the most common features were selected from an initial total of (30) images found online. It is important that the images share similar features in order for the Textual Inversion to be effective. If the images are totally disparate, the model may not train well because the images are too different. Also, the images had to be of high quality. As the saying goes, ‘garbage in, garbage out’.
 
 The (4) images were then pre-processed using BLIP for captions, and also cropped to 512px by 512px.
 
@@ -69,13 +69,13 @@ The (4) images were then pre-processed using BLIP for captions, and also cropped
 
 ## 05. Finding the best Textual Inversion checkpoint
 
-Once the training was completed, the next step was to determine which of the embedding checkpoints was the most appropriate. For max steps of 300 and with an embedding saved every 30 steps, that means that there are 10 TI checkpoints to choose from.
+Once the training was complete, the next step was to determine which of the embedding checkpoints was the most appropriate. For max steps of 300 and with an embedding saved every 30 steps, that means that there are 10 TI checkpoints to choose from.
 
-My prior studies have shown that the realisticVision2.0 checkpoint (https://civitai.com/models/4201/realistic-vision-v20) was the most suitable for architectural visual renderings. The other checkpoints (the base SD checkpoint, deliberate_v2, dvArchMultiPrompt) did not feel as suitable. Hence, the next task was to test the 10 TI checkpoints against the realisticVision2.0 checkpoint to identify the most suitable. 
+My prior studies have shown that the realisticVision2.0 checkpoint (https://civitai.com/models/4201/realistic-vision-v20) was the most suitable for architectural visual renderings. The other checkpoints (the base SD checkpoint, deliberate_v2, dvArchMultiPrompt) did not feel as suitable for this testing. Hence, the next task was to test the 10 TI checkpoints against the realisticVision2.0 checkpoint to identify the most suitable. 
 
 ### txt2img
 
-| txt2img Settings | Configuration |
+| Settings | Configuration |
 | :----- | :------ |
 | Prompt  | Lettherebelight, (((architectural rendering)), (((dramatic lighting))), landscape photo of a modern villa surrounded by tropical trees, night, (((modern architecture villa))), modern, (((tropical trees))), (((lush vegetation))), (((villa on the beach))), white sandy beach, ((tropical)), (((realistic))), 85mm, f1.8, portrait, photo realistic, hyperrealistic, super detailed |
 | Negative Prompt | signature, soft, blurry, drawing, sketch, poor quality, ugly, text, type, word, logo, pixelated, low resolution, saturated, high contrast, oversharpened |
@@ -86,7 +86,7 @@ My prior studies have shown that the realisticVision2.0 checkpoint (https://civi
 
 ### ControlNet
 
-| ControlNet Settings | Configuration |
+| Settings | Configuration |
 | :----- | :------ |
 | Enable | Yes |
 | Preprocessor | Canny |
@@ -101,7 +101,7 @@ My prior studies have shown that the realisticVision2.0 checkpoint (https://civi
 
 The use of this script is to automate and swap out ‘Lettherebelight’ in the original prompt with the other TI checkpoints.
 
-The most suitable turned out to be Lettherebelight-150. That will be the checkpoint used. I saved the 9 rejected checkpoints in a separate folder, and renamed Lettherebelight-150 to Lettherebelight.
+The most suitable turned out to be Lettherebelight-150. That will be the checkpoint used. I archived the 9 rejected checkpoints in a separate folder, and renamed Lettherebelight-150 to Lettherebelight.
 
 ## 06. Observations of selected Textual Inversion checkpoint
 
