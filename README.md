@@ -11,7 +11,7 @@ Disclaimer: I'm not trained in ML (word pun totally intended) so the following d
 
 •	ControlNet
 
-•	Textual Inversion
+•	Textual Inversion (also called embedding)
 
 Stable Diffusion and ControlNet are powerful tools with good potential to accelerate the workflow from a basic preliminary Sketchup model view to a visual rendering (albeit draft) of the model in the quickest time possible, with various iterations possible. While this already allows for visual renderings to be generated, the objective of this experiment is to further finetune and enhance the visual rendering through the training and use of a Textual Inversion model.
 
@@ -33,11 +33,29 @@ I made a quick villa in Sketchup and exported 2 linework views at 720px by 512px
 
 Sample views as inputs to SD 1.5 and ControlNet
 
-![A720x512](https://github.com/ngchloe/Lettherebelight/blob/main/A720x512.jpg)
+![A720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/A720x512.jpg)
 
 Elevation view taken from Sketchup (own model)
 
-![B720x512](https://github.com/ngchloe/Lettherebelight/blob/main/B720x512.jpg)
+![B720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg)
 
 Perspective view taken from Sketchup (own model)
 
+### Training of Textual Inversion (TI)
+
+| Setting | Option |
+| :----- | :------ |
+| Stable Diffusion checkpoint  | v1-5-pruned-emaonly.ckpt |
+| Embedding name | lettherebelight |
+| Number of vectors per token  | 10  |
+
+(4) images with the most common features were selected from an initial total of (30) images found online. It is important that the images share similar features in order for the Textual Inversion to be effective. If the images were totally disparate, the model may not train well because the images are too different. Also, the images had to be of high quality. As the saying goes, ‘garbage in, garbage out’.
+
+The (4) images were then pre-processed using BLIP for captions, and also cropped to 512px by 512px.
+
+| Setting | Option |
+| :----- | :------ |
+| Embedding Learning rate  | 0.005 |
+| Max steps | 300 |
+| Embedding saved after every N steps  | 30  |
+| Latent sampling method | Deterministic |
