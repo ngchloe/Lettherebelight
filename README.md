@@ -26,3 +26,18 @@ ControlNet is a means of controlling diffusion models by adding extra conditions
 •	Textual Inversion (https://arxiv.org/abs/2208.01618)
 
 Textual Inversion is a way to build upon existing large models with a user-provided concept. With a few sample images of a user-provided concept, be it an object or style, this can be represented through new ‘words’ of an existing model. These ‘words’ can then be used to guide outputs in a more intuitive and personalised manner.
+
+### Pre-training Preparation
+
+I made a quick villa in Sketchup and exported 2 linework views at 720px by 512px each.
+
+Sample views as inputs to SD 1.5 and ControlNet
+
+![A720x512](https://github.com/ngchloe/Lettherebelight/assets/109575115/03fe1009-d68c-4b3c-9e3e-abc94bb679ef)
+
+Elevation view taken from Sketchup (own model)
+
+![B720x512](https://github.com/ngchloe/Lettherebelight/assets/109575115/ba587670-5bde-4333-9b09-2300cfd238be)
+
+Perspective view taken from Sketchup (own model)
+
