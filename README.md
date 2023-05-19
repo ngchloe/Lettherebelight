@@ -5,7 +5,7 @@ Date: May 2023
 
 Disclaimer: I'm not trained in ML (word pun totally intended) so the following document is simply a layperson's understanding, and used as an avenue to share my findings.
 
-## Programs/tools concerned:
+## Programs/tools involved
 
 •	Stable Diffusion 1.5 – Automatic1111
 
