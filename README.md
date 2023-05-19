@@ -23,8 +23,8 @@ Thus, this document outlines my attempts at training my own Textual Inversion mo
 
 ControlNet is a means of controlling diffusion models by adding extra conditions. It allows for the copying of compositions from a reference image. For example:
 
-| Elevation View | Perspective View |
-| :----- | :------ |
+| Input image | Output using Stable Diffusion and ControlNet|
+| :------ | :------ |
 | <img src="https://github.com/ngchloe/Lettherebelight/blob/main/images/B720x512.jpg"  width ="720">| <img src="https://github.com/ngchloe/Lettherebelight/blob/main/images/sample.png" width ="720" >
 | Exported Sketchup view of model (own model) as the input image to SD 1.5 | SD 1.5 and ControlNet with a text prompt automatically renders the image, while still retaining the original composition and reference linework from the input image. |
 
@@ -175,7 +175,9 @@ Sunset view (elevation)
 | :----- | 
 | ![no TI](https://github.com/ngchloe/Lettherebelight/blob/main/images/sunset%20-%20elevation%20-%20prompt.png) |
 
-The above collage of images uses the same text prompt, but with additional prompting to achieve a warm, orange-hued glow effect. The prompt has the unintentional effect of toning the building material to be more orange in colour and the images look more flat and less dramatic. Hence, text alone is insufficient in achieving the intended effect, Lettherebelight is a useful Textual Inversion model in further refining a given text prompt.
+The above collage of images uses the same text prompt, but with additional prompting to achieve a warm, orange-hued glow effect. The prompt has the unintentional effect of toning the building material to be more orange in colour and the images look more flat and less dramatic. 
+
+**Hence, since text alone is insufficient in achieving the intended effect, Lettherebelight is a useful Textual Inversion model in further refining a given text prompt.**
 
 ## Conclusion
 
