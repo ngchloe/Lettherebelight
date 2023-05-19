@@ -33,11 +33,11 @@ I made a quick villa in Sketchup and exported 2 linework views at 720px by 512px
 
 Sample views as inputs to SD 1.5 and ControlNet
 
-![A720x512](https://github.com/ngchloe/Lettherebelight/assets/109575115/03fe1009-d68c-4b3c-9e3e-abc94bb679ef)
+![A720x512](https://github.com/ngchloe/Lettherebelight/blob/main/A720x512.jpg)
 
 Elevation view taken from Sketchup (own model)
 
-![B720x512](https://github.com/ngchloe/Lettherebelight/assets/109575115/ba587670-5bde-4333-9b09-2300cfd238be)
+![B720x512](https://github.com/ngchloe/Lettherebelight/blob/main/B720x512.jpg)
 
 Perspective view taken from Sketchup (own model)
 
