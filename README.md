@@ -29,9 +29,7 @@ Textual Inversion is a way to build upon existing large models with a user-provi
 
 ### Pre-training Preparation
 
-I made a quick villa in Sketchup and exported 2 linework views at 720px by 512px each.
-
-Sample views as inputs to SD 1.5 and ControlNet
+I made a quick villa in Sketchup and exported 2 black and white linework-only views at 720px by 512px each. Sample views as inputs to SD 1.5 and ControlNet:
 
 ![A720x512](https://github.com/ngchloe/Lettherebelight/blob/main/images/A720x512.jpg)
 
@@ -43,7 +41,7 @@ Perspective view taken from Sketchup (own model)
 
 ### Training of Textual Inversion (TI)
 
-| Setting | Option |
+| Create embedding Settings | Configuration |
 | :----- | :------ |
 | Stable Diffusion checkpoint  | v1-5-pruned-emaonly.ckpt |
 | Embedding name | lettherebelight |
@@ -53,9 +51,35 @@ Perspective view taken from Sketchup (own model)
 
 The (4) images were then pre-processed using BLIP for captions, and also cropped to 512px by 512px.
 
-| Setting | Option |
+| Training Settings | Configuration |
 | :----- | :------ |
 | Embedding Learning rate  | 0.005 |
 | Max steps | 300 |
 | Embedding saved after every N steps  | 30  |
 | Latent sampling method | Deterministic |
+
+### Finding the best Textual Inversion checkpoint
+
+Once the training was completed, the next step was to determine which of the embedding checkpoints was the most appropriate. For max steps of 300 and with an embedding saved every 30 steps, that means that there are 10 TI checkpoints to choose from.
+
+My prior studies have shown that the realisticVision2.0 checkpoint (https://civitai.com/models/4201/realistic-vision-v20) was the most suitable for architectural visual renderings. The other checkpoints (the base SD checkpoint, deliberate_v2, dvArchMultiPrompt) did not feel as suitable. Hence, the next task was to test the 10 TI checkpoints against the realisticVision2.0 checkpoint to identify the most suitable. 
+
+| txt2img Settings | Configuration |
+| :----- | :------ |
+| Prompt  | Lettherebelight, (((architectural rendering)), (((dramatic lighting))), landscape photo of a modern villa surrounded by tropical trees, night, (((modern architecture villa))), modern, (((tropical trees))), (((lush vegetation))), (((villa on the beach))), white sandy beach, ((tropical)), (((realistic))), 85mm, f1.8, portrait, photo realistic, hyperrealistic, super detailed |
+| Negative Prompt | signature, soft, blurry, drawing, sketch, poor quality, ugly, text, type, word, logo, pixelated, low resolution, saturated, high contrast, oversharpened |
+| Sampling method  | Euler a  |
+| Sampling steps | 20 |
+| Width | 720px (to correspond to input image size) |
+| Height | 512px (to correspond to input image size) |
+
+
+| ControlNet Setting | Configuration |
+| :----- | :------ |
+| Enable | Yes |
+| Preprocessor | Canny |
+| Model | Control_v11p_sd15_canny |
+
+
+
+
