@@ -97,6 +97,7 @@ My prior studies have shown that the realisticVision2.0 checkpoint (https://civi
 | Settings | Configuration |
 | :----- | :------ |
 | Script | X/Y/Z plot |
+| X type | Prompt S/R |
 | X values | Lettherebelight, Lettherebelight-30, Lettherebelight-60, Lettherebelight-90, Lettherebelight-120, Lettherebelight-150, Lettherebelight-180, Lettherebelight-210, Lettherebelight-240, Lettherebelight-270, Lettherebelight-300 |
 
 The use of this script is to automate and swap out ‘Lettherebelight’ in the original prompt with the other TI checkpoints.
